@@ -52,6 +52,21 @@ public class Calculadora {
                 System.out.println("La raíz cuadrada del numero dijitado es: "+res);
                 break;
             }
-        }
+            case 7 -> {
+                System.out.println("Ingrese el ángulo en grados:");
+                double angle = leer.nextDouble();
+                double radians = Math.toRadians(angle);
+                double sinValue = Math.sin(radians);
+                System.out.println("El seno de " + angle + " grados es: " + sinValue);
+                break;
+            }
+            case 8 -> {
+                System.out.println("Ingrese el ángulo en grados:");
+                double angle = leer.nextDouble();
+                double radians = Math.toRadians(angle);
+                double cosValue = Math.cos(radians);
+                System.out.println("El coseno de " + angle + " grados es: " + cosValue);
+                break;
+             }
     }
 }
