@@ -16,7 +16,7 @@ public class Calculadora {
         System.out.println("Ingrese el primer número");
         n1 = leer.nextInt();
         
-        if(opc !=6){
+        if(opc !=6 || opc !=7 || opc !=8 || opc !=9 || opc !=10 || opc !=11){
            System.out.println("Ingrese el segundo número");
         n2 = leer.nextInt(); 
         }
