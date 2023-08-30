@@ -79,14 +79,29 @@ public class CalculadoraCC extends javax.swing.JFrame {
 
         botonSeno.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         botonSeno.setText("Sin");
+        botonSeno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSenoActionPerformed(evt);
+            }
+        });
         jPanel1.add(botonSeno);
 
         botonCoseno.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         botonCoseno.setText("Cos");
+        botonCoseno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCosenoActionPerformed(evt);
+            }
+        });
         jPanel1.add(botonCoseno);
 
         botonTangente.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         botonTangente.setText("Tan");
+        botonTangente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonTangenteActionPerformed(evt);
+            }
+        });
         jPanel1.add(botonTangente);
 
         botonRaiz.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -109,6 +124,11 @@ public class CalculadoraCC extends javax.swing.JFrame {
 
         botonIva.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         botonIva.setText("Iva %");
+        botonIva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIvaActionPerformed(evt);
+            }
+        });
         jPanel1.add(botonIva);
 
         botonDivision.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -480,7 +500,14 @@ public class CalculadoraCC extends javax.swing.JFrame {
             operacion = "nula";
         }
             }
-        etiquetaMuestra.setText("");
+        if(operacion.equals("Iva")){
+            segundoNumero = Double.parseDouble(cadenaNumeros);
+            resultado = primerNumero * (segundoNumero/100);
+            etiquetaNumeros.setText(String.format("%.2f", resultado));
+            cadenaNumeros = String.valueOf(resultado);
+            operacion = "nula";
+        }
+        etiquetaMuestra.setText("%");
         activado = true;
     }//GEN-LAST:event_botonIgualActionPerformed
 
@@ -579,6 +606,51 @@ private double obtenerValorPotenciaEnesima() {
     double valorPotenciaEnesima = Double.parseDouble(input);
     return valorPotenciaEnesima;
     }//GEN-LAST:event_botonPotenciaActionPerformed
+
+    private void botonIvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIvaActionPerformed
+        // TODO add your handling code here:
+        if(activado == true){
+            primerNumero = Double.parseDouble(cadenaNumeros);
+            etiquetaMuestra.setText(cadenaNumeros + "*");
+            cadenaNumeros = "";
+            operacion = "Iva";
+            activado = false; 
+            punto = true;
+        }
+    }//GEN-LAST:event_botonIvaActionPerformed
+
+    private void botonSenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSenoActionPerformed
+        // TODO add your handling code here:
+        double numero = Double.parseDouble(cadenaNumeros);
+    double seno = Math.sin(numero);
+    
+    etiquetaMuestra.setText("sen(" + cadenaNumeros + ")");
+    etiquetaNumeros.setText(String.format("%.4f", seno));
+    
+    cadenaNumeros = String.valueOf(seno);
+    }//GEN-LAST:event_botonSenoActionPerformed
+
+    private void botonCosenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCosenoActionPerformed
+        // TODO add your handling code here:
+        double numero = Double.parseDouble(cadenaNumeros);
+    double coseno = Math.cos(numero);
+    
+    etiquetaMuestra.setText("cos(" + cadenaNumeros + ")");
+    etiquetaNumeros.setText(String.format("%.4f", coseno));
+    
+    cadenaNumeros = String.valueOf(coseno);
+    }//GEN-LAST:event_botonCosenoActionPerformed
+
+    private void botonTangenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTangenteActionPerformed
+        // TODO add your handling code here:
+        double numero = Double.parseDouble(cadenaNumeros);
+    double tangente = Math.tan(numero);
+    
+    etiquetaMuestra.setText("tan(" + cadenaNumeros + ")");
+    etiquetaNumeros.setText(String.format("%.4f", tangente));
+    
+    cadenaNumeros = String.valueOf(tangente);
+    }//GEN-LAST:event_botonTangenteActionPerformed
 
     /**
      * @param args the command line arguments
