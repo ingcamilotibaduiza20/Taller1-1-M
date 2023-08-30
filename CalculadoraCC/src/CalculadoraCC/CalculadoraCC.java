@@ -84,6 +84,11 @@ public class CalculadoraCC extends javax.swing.JFrame {
 
         botonRaiz.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         botonRaiz.setText("√");
+        botonRaiz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRaizActionPerformed(evt);
+            }
+        });
         jPanel1.add(botonRaiz);
 
         botonPotencia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -96,6 +101,11 @@ public class CalculadoraCC extends javax.swing.JFrame {
 
         botonDivision.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         botonDivision.setText("÷");
+        botonDivision.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonDivisionActionPerformed(evt);
+            }
+        });
         jPanel1.add(botonDivision);
 
         boton7.setBackground(new java.awt.Color(204, 204, 204));
@@ -130,6 +140,11 @@ public class CalculadoraCC extends javax.swing.JFrame {
 
         botonMultiplicación.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         botonMultiplicación.setText("x");
+        botonMultiplicación.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonMultiplicaciónActionPerformed(evt);
+            }
+        });
         jPanel1.add(botonMultiplicación);
 
         boton4.setBackground(new java.awt.Color(204, 204, 204));
@@ -164,6 +179,11 @@ public class CalculadoraCC extends javax.swing.JFrame {
 
         botonMenos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         botonMenos.setText("-");
+        botonMenos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonMenosActionPerformed(evt);
+            }
+        });
         jPanel1.add(botonMenos);
 
         boton1.setBackground(new java.awt.Color(204, 204, 204));
@@ -400,6 +420,9 @@ public class CalculadoraCC extends javax.swing.JFrame {
     private void botonIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIgualActionPerformed
         // TODO add your handling code here:
         double segundoNumero;
+        if(operacion.equals("nula")){
+            etiquetaNumeros.setText(cadenaNumeros);
+        }
         if(operacion.equals("sumar")){
             segundoNumero = Double.parseDouble(cadenaNumeros);
             resultado = primerNumero + segundoNumero;
@@ -407,9 +430,73 @@ public class CalculadoraCC extends javax.swing.JFrame {
             cadenaNumeros = String.valueOf(resultado);
             operacion = "nula";
         }
+        if(operacion.equals("restar")){
+            segundoNumero = Double.parseDouble(cadenaNumeros);
+            resultado = primerNumero - segundoNumero;
+            etiquetaNumeros.setText(String.format("%.1f", resultado));
+            cadenaNumeros = String.valueOf(resultado);
+            operacion = "nula";
+        }
+        if(operacion.equals("multiplicar")){
+            segundoNumero = Double.parseDouble(cadenaNumeros);
+            resultado = primerNumero * segundoNumero;
+            etiquetaNumeros.setText(String.format("%.1f", resultado));
+            cadenaNumeros = String.valueOf(resultado);
+            operacion = "nula";
+        }
+        if(operacion.equals("dividir")){
+            segundoNumero = Double.parseDouble(cadenaNumeros);
+            if(segundoNumero == 0){
+                etiquetaNumeros.setText("Syntaxis Error");
+            }else{
+                resultado = primerNumero / segundoNumero;
+            etiquetaNumeros.setText(String.format("%.1f", resultado));
+            cadenaNumeros = String.valueOf(resultado);
+            operacion = "nula";
+        }
+            }
         etiquetaMuestra.setText("");
         activado = true;
     }//GEN-LAST:event_botonIgualActionPerformed
+
+    private void botonMenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMenosActionPerformed
+        // TODO add your handling code here:
+        if(activado == true){
+            primerNumero = Double.parseDouble(cadenaNumeros);
+            etiquetaMuestra.setText(cadenaNumeros + "-");
+            cadenaNumeros = "";
+            operacion = "restar";
+            activado = false; 
+        }
+    }//GEN-LAST:event_botonMenosActionPerformed
+
+    private void botonMultiplicaciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMultiplicaciónActionPerformed
+        // TODO add your handling code here:
+                if(activado == true){
+            primerNumero = Double.parseDouble(cadenaNumeros);
+            etiquetaMuestra.setText(cadenaNumeros + "*");
+            cadenaNumeros = "";
+            operacion = "multiplicar";
+            activado = false; 
+        }
+    }//GEN-LAST:event_botonMultiplicaciónActionPerformed
+
+    private void botonDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDivisionActionPerformed
+        // TODO add your handling code here:
+                if(activado == true){
+            primerNumero = Double.parseDouble(cadenaNumeros);
+            etiquetaMuestra.setText(cadenaNumeros + "÷");
+            cadenaNumeros = "";
+            operacion = "dividir";
+            activado = false; 
+        }
+    }//GEN-LAST:event_botonDivisionActionPerformed
+
+    private void botonRaizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRaizActionPerformed
+        // TODO add your handling code here:
+        primerNumero = Double.parseDouble(cadenaNumeros);
+        etiquetaMuestra.setText("sqrt(")
+    }//GEN-LAST:event_botonRaizActionPerformed
 
     /**
      * @param args the command line arguments
