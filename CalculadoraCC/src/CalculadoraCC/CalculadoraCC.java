@@ -4,6 +4,8 @@
  */
 package CalculadoraCC;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Cristian Camilo Tibaduiza Melgarejo
@@ -68,6 +70,11 @@ public class CalculadoraCC extends javax.swing.JFrame {
         botonC.setBackground(new java.awt.Color(255, 255, 153));
         botonC.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         botonC.setText("C");
+        botonC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCActionPerformed(evt);
+            }
+        });
         jPanel1.add(botonC);
 
         botonSeno.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -93,6 +100,11 @@ public class CalculadoraCC extends javax.swing.JFrame {
 
         botonPotencia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         botonPotencia.setText("^");
+        botonPotencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonPotenciaActionPerformed(evt);
+            }
+        });
         jPanel1.add(botonPotencia);
 
         botonIva.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -299,11 +311,12 @@ public class CalculadoraCC extends javax.swing.JFrame {
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
         // TODO add your handling code here:
-        if(cadenaNumeros.charAt(0) != "-"){
+        if(cadenaNumeros.charAt(0) != '-'){
             cadenaNumeros = "-" + cadenaNumeros;
         }else{
-            cadenaNumeros = cadenaNumeros.substring()
+            cadenaNumeros = cadenaNumeros.substring(1,cadenaNumeros.length());
         }
+        etiquetaNumeros.setText(cadenaNumeros);
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void botonSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSumaActionPerformed
@@ -509,12 +522,20 @@ public class CalculadoraCC extends javax.swing.JFrame {
 
     private void botonRaizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRaizActionPerformed
         // TODO add your handling code here:
-        primerNumero = Double.parseDouble(cadenaNumeros);
-        etiquetaMuestra.setText("√("+cadenaNumeros+")");
-        resultado = Math.sqrt(primerNumero);
-        etiquetaNumeros.setText(String.format("%.2f", resultado));
-        cadenaNumeros = String.valueOf(resultado);
-        punto = true;
+    double primerNumero = Double.parseDouble(cadenaNumeros);
+    double raizEnesima = obtenerValorRaizEnesima(); 
+    double resultado = Math.pow(primerNumero, 1.0 / raizEnesima);
+
+    etiquetaMuestra.setText("raiz enesima(" + cadenaNumeros + ", " + raizEnesima + ")");
+    etiquetaNumeros.setText(String.format("%.2f", resultado));
+    cadenaNumeros = String.valueOf(resultado);
+    punto = true;
+    }                                         
+
+private double obtenerValorRaizEnesima() {
+    String input = JOptionPane.showInputDialog("Ingrese el índice de la raíz enésima:");
+    double valorRaizEnesima = Double.parseDouble(input);
+    return valorRaizEnesima;
     }//GEN-LAST:event_botonRaizActionPerformed
 
     private void botonPuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPuntoActionPerformed
@@ -530,6 +551,34 @@ public class CalculadoraCC extends javax.swing.JFrame {
         }
         punto = false;
     }//GEN-LAST:event_botonPuntoActionPerformed
+
+    private void botonCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCActionPerformed
+        // TODO add your handling code here:
+        etiquetaMuestra.setText("");
+        etiquetaNumeros.setText("0");
+        cadenaNumeros = "";
+        operacion = "nula";
+        activado = true;
+        punto = true;
+    }//GEN-LAST:event_botonCActionPerformed
+
+    private void botonPotenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPotenciaActionPerformed
+        // TODO add your handling code here:
+        double primerNumero = Double.parseDouble(cadenaNumeros);
+    double potenciaEnesima = obtenerValorPotenciaEnesima(); 
+    double resultado = Math.pow(primerNumero, potenciaEnesima);
+
+    etiquetaMuestra.setText("potencia enesima(" + cadenaNumeros + ", " + potenciaEnesima + ")");
+    etiquetaNumeros.setText(String.format("%.2f", resultado));
+    cadenaNumeros = String.valueOf(resultado);
+    punto = true;
+}                                         
+
+private double obtenerValorPotenciaEnesima() {
+    String input = JOptionPane.showInputDialog("Ingrese el exponente de la potencia enésima:");
+    double valorPotenciaEnesima = Double.parseDouble(input);
+    return valorPotenciaEnesima;
+    }//GEN-LAST:event_botonPotenciaActionPerformed
 
     /**
      * @param args the command line arguments

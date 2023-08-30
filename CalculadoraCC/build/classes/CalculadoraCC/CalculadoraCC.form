@@ -67,6 +67,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="C"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonSeno">
           <Properties>
@@ -110,6 +113,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="^"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonPotenciaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonIva">
           <Properties>
