@@ -96,7 +96,7 @@ public class CalculadoraCC extends javax.swing.JFrame {
         jPanel1.add(botonPotencia);
 
         botonIva.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        botonIva.setText("Iva 19%");
+        botonIva.setText("Iva %");
         jPanel1.add(botonIva);
 
         botonDivision.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -299,6 +299,11 @@ public class CalculadoraCC extends javax.swing.JFrame {
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
         // TODO add your handling code here:
+        if(cadenaNumeros.charAt(0) != "-"){
+            cadenaNumeros = "-" + cadenaNumeros;
+        }else{
+            cadenaNumeros = cadenaNumeros.substring()
+        }
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void botonSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSumaActionPerformed
