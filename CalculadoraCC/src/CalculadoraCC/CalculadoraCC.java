@@ -27,100 +27,124 @@ public class CalculadoraCC extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        botonC = new javax.swing.JButton();
+        botonSeno = new javax.swing.JButton();
+        botonCoseno = new javax.swing.JButton();
+        botonCE = new javax.swing.JButton();
+        botonRaiz = new javax.swing.JButton();
+        botonPotencia = new javax.swing.JButton();
+        botonIva = new javax.swing.JButton();
+        botonDivision = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
+        botonMultiplicación = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
+        botonMenos = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
+        botonSuma = new javax.swing.JButton();
         jButton21 = new javax.swing.JButton();
         jButton22 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
+        botonPunto = new javax.swing.JButton();
+        botonIgual = new javax.swing.JButton();
+        etiquetaNucleos = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new java.awt.GridLayout(6, 4));
 
-        jButton1.setText("jButton1");
-        jPanel1.add(jButton1);
+        botonC.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        botonC.setText("C");
+        jPanel1.add(botonC);
 
-        jButton7.setText("jButton7");
-        jPanel1.add(jButton7);
+        botonSeno.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        botonSeno.setText("Sin");
+        jPanel1.add(botonSeno);
 
-        jButton2.setText("jButton2");
-        jPanel1.add(jButton2);
+        botonCoseno.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        botonCoseno.setText("Cos");
+        jPanel1.add(botonCoseno);
 
-        jButton3.setText("jButton3");
-        jPanel1.add(jButton3);
+        botonCE.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        botonCE.setText("CE");
+        jPanel1.add(botonCE);
 
-        jButton13.setText("jButton13");
-        jPanel1.add(jButton13);
+        botonRaiz.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        botonRaiz.setText("√");
+        jPanel1.add(botonRaiz);
 
-        jButton4.setText("jButton4");
-        jPanel1.add(jButton4);
+        botonPotencia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        botonPotencia.setText("^");
+        jPanel1.add(botonPotencia);
 
-        jButton5.setText("jButton5");
-        jPanel1.add(jButton5);
+        botonIva.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        botonIva.setText("Iva 19%");
+        jPanel1.add(botonIva);
 
-        jButton6.setText("jButton6");
-        jPanel1.add(jButton6);
+        botonDivision.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        botonDivision.setText("÷");
+        jPanel1.add(botonDivision);
 
+        jButton8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton8.setText("7");
         jPanel1.add(jButton8);
 
+        jButton9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton9.setText("8");
         jPanel1.add(jButton9);
 
+        jButton10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton10.setText("9");
         jPanel1.add(jButton10);
 
-        jButton19.setText("-");
-        jPanel1.add(jButton19);
+        botonMultiplicación.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        botonMultiplicación.setText("x");
+        jPanel1.add(botonMultiplicación);
 
+        jButton11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton11.setText("4");
         jPanel1.add(jButton11);
 
+        jButton12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton12.setText("5");
         jPanel1.add(jButton12);
 
+        jButton14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton14.setText("6");
         jPanel1.add(jButton14);
 
-        jButton15.setText("+");
-        jPanel1.add(jButton15);
+        botonMenos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        botonMenos.setText("-");
+        jPanel1.add(botonMenos);
 
+        jButton16.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton16.setText("1");
         jPanel1.add(jButton16);
 
+        jButton17.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton17.setText("2");
         jPanel1.add(jButton17);
 
+        jButton18.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton18.setText("3");
         jPanel1.add(jButton18);
 
-        jButton20.setText("+");
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
+        botonSuma.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        botonSuma.setText("+");
+        botonSuma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
+                botonSumaActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton20);
+        jPanel1.add(botonSuma);
 
-        jButton21.setText("jButton21");
+        jButton21.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton21.setText("+/-");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton21ActionPerformed(evt);
@@ -128,22 +152,47 @@ public class CalculadoraCC extends javax.swing.JFrame {
         });
         jPanel1.add(jButton21);
 
+        jButton22.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton22.setText("0");
         jPanel1.add(jButton22);
 
-        jButton23.setText("jButton23");
-        jPanel1.add(jButton23);
+        botonPunto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        botonPunto.setText(".");
+        jPanel1.add(botonPunto);
+
+        botonIgual.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        botonIgual.setText("=");
+        jPanel1.add(botonIgual);
+
+        etiquetaNucleos.setFont(new java.awt.Font("Segoe UI", 0, 42)); // NOI18N
+        etiquetaNucleos.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        etiquetaNucleos.setText("0");
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(etiquetaNucleos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 141, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(etiquetaNucleos, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -154,9 +203,9 @@ public class CalculadoraCC extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton21ActionPerformed
 
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+    private void botonSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSumaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton20ActionPerformed
+    }//GEN-LAST:event_botonSumaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,29 +243,32 @@ public class CalculadoraCC extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton botonC;
+    private javax.swing.JButton botonCE;
+    private javax.swing.JButton botonCoseno;
+    private javax.swing.JButton botonDivision;
+    private javax.swing.JButton botonIgual;
+    private javax.swing.JButton botonIva;
+    private javax.swing.JButton botonMenos;
+    private javax.swing.JButton botonMultiplicación;
+    private javax.swing.JButton botonPotencia;
+    private javax.swing.JButton botonPunto;
+    private javax.swing.JButton botonRaiz;
+    private javax.swing.JButton botonSeno;
+    private javax.swing.JButton botonSuma;
+    private javax.swing.JLabel etiquetaNucleos;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
