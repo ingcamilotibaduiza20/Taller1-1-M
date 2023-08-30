@@ -37,7 +37,7 @@ public class CalculadoraCC extends javax.swing.JFrame {
         botonC = new javax.swing.JButton();
         botonSeno = new javax.swing.JButton();
         botonCoseno = new javax.swing.JButton();
-        botonCE = new javax.swing.JButton();
+        botonTangente = new javax.swing.JButton();
         botonRaiz = new javax.swing.JButton();
         botonPotencia = new javax.swing.JButton();
         botonIva = new javax.swing.JButton();
@@ -78,9 +78,9 @@ public class CalculadoraCC extends javax.swing.JFrame {
         botonCoseno.setText("Cos");
         jPanel1.add(botonCoseno);
 
-        botonCE.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        botonCE.setText("CE");
-        jPanel1.add(botonCE);
+        botonTangente.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        botonTangente.setText("Tan");
+        jPanel1.add(botonTangente);
 
         botonRaiz.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         botonRaiz.setText("√");
@@ -246,6 +246,11 @@ public class CalculadoraCC extends javax.swing.JFrame {
 
         botonPunto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         botonPunto.setText(".");
+        botonPunto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonPuntoActionPerformed(evt);
+            }
+        });
         jPanel1.add(botonPunto);
 
         botonIgual.setBackground(new java.awt.Color(204, 255, 255));
@@ -304,6 +309,7 @@ public class CalculadoraCC extends javax.swing.JFrame {
             cadenaNumeros = "";
             operacion = "sumar";
             activado = false; 
+            punto = true;
         }
     }//GEN-LAST:event_botonSumaActionPerformed
 
@@ -316,6 +322,7 @@ public class CalculadoraCC extends javax.swing.JFrame {
         }
         etiquetaNumeros.setText(cadenaNumeros);
         activado = true;
+        
     }//GEN-LAST:event_boton7ActionPerformed
 
     private void boton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton8ActionPerformed
@@ -467,6 +474,7 @@ public class CalculadoraCC extends javax.swing.JFrame {
             cadenaNumeros = "";
             operacion = "restar";
             activado = false; 
+            punto = true;
         }
     }//GEN-LAST:event_botonMenosActionPerformed
 
@@ -478,6 +486,7 @@ public class CalculadoraCC extends javax.swing.JFrame {
             cadenaNumeros = "";
             operacion = "multiplicar";
             activado = false; 
+            punto = true;
         }
     }//GEN-LAST:event_botonMultiplicaciónActionPerformed
 
@@ -489,14 +498,33 @@ public class CalculadoraCC extends javax.swing.JFrame {
             cadenaNumeros = "";
             operacion = "dividir";
             activado = false; 
+            punto = true;
         }
     }//GEN-LAST:event_botonDivisionActionPerformed
 
     private void botonRaizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRaizActionPerformed
         // TODO add your handling code here:
         primerNumero = Double.parseDouble(cadenaNumeros);
-        etiquetaMuestra.setText("sqrt(")
+        etiquetaMuestra.setText("√("+cadenaNumeros+")");
+        resultado = Math.sqrt(primerNumero);
+        etiquetaNumeros.setText(String.format("%.2f", resultado));
+        cadenaNumeros = String.valueOf(resultado);
+        punto = true;
     }//GEN-LAST:event_botonRaizActionPerformed
+
+    private void botonPuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPuntoActionPerformed
+        // TODO add your handling code here:
+        if(punto == true){
+            if(cadenaNumeros.equals("")){
+                cadenaNumeros = "0.";
+            }else{
+                cadenaNumeros += ".";
+            }
+            etiquetaNumeros.setText(cadenaNumeros);
+            punto = false;
+        }
+        punto = false;
+    }//GEN-LAST:event_botonPuntoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -545,7 +573,6 @@ public class CalculadoraCC extends javax.swing.JFrame {
     private javax.swing.JButton boton8;
     private javax.swing.JButton boton9;
     private javax.swing.JButton botonC;
-    private javax.swing.JButton botonCE;
     private javax.swing.JButton botonCoseno;
     private javax.swing.JButton botonDivision;
     private javax.swing.JButton botonIgual;
@@ -557,6 +584,7 @@ public class CalculadoraCC extends javax.swing.JFrame {
     private javax.swing.JButton botonRaiz;
     private javax.swing.JButton botonSeno;
     private javax.swing.JButton botonSuma;
+    private javax.swing.JButton botonTangente;
     private javax.swing.JLabel etiquetaMuestra;
     private javax.swing.JLabel etiquetaNumeros;
     private javax.swing.JButton jButton21;
